@@ -9,7 +9,7 @@ hindexlist = []
 datc = 0
 hindex = 0
 count = 0
-name=""
+name=datacon[0][0]
 for datum in datacon:
     if datum[0] != name:
         row = [name, hindex]
@@ -22,7 +22,6 @@ for datum in datacon:
         hindex = hindex + 1
         continue
 hindexlist = [[row[0],str(row[1])] for row in hindexlist]
-hindexlist.pop(0)
 with open('hindex.csv', 'wr') as hindexfile:
     writer = csv.writer(hindexfile)
     writer.writerows(hindexlist)
